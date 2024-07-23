@@ -10,4 +10,4 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Build
-        run: npm run build
+        run: npm install && npm run build
