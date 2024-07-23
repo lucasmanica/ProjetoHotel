@@ -111,66 +111,10 @@
       "city": "São Sebastião",
       "state": "SP",
       "hotelImg": "hotel0",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 1
-    },
-    {
-      "name": "Hotel Praia",
-      "city": "São Sebastião",
-      "state": "SP",
-      "hotelImg": "hotel0",
       "checkIn": "2024-07-22T18:22:17.984Z",
       "checkOut": "2024-07-23T03:00:00.000Z",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 2
-    },
-    {
-      "name": "Hotel Sol",
-      "city": "São José do Rio Preto",
-      "state": "SP",
-      "hotelImg": "hotel3",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 3
-    },
-    {
-      "name": "Hotel California",
-      "city": "São José dos Campos",
-      "state": "SP",
-      "hotelImg": "hotel2",
-      "checkIn": "2024-07-23T02:36:49.772Z",
-      "checkOut": "2024-07-24T03:00:00.000Z",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 4
-    },
-    {
-      "name": "Hotel California",
-      "city": "São José dos Campos",
-      "state": "SP",
-      "hotelImg": "hotel2",
-      "checkIn": "2024-07-23T02:47:18.925Z",
-      "checkOut": "2024-07-23T02:47:18.925Z",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 5
-    },
-    {
-      "name": "Hotel RP",
-      "city": "São José do Rio Preto",
-      "state": "SP",
-      "hotelImg": "hotel4",
-      "payment": [
-        "Cartão de Crédito"
-      ],
-      "id": 6
+      "payment": ["Cartão de Crédito"],
+      "id": 1
     }
   ]
 }
