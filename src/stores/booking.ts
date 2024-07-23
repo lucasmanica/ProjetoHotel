@@ -8,7 +8,6 @@ export const bookingStore = defineStore('booking', () => {
   const isLoading = ref(false)
   const notificationBooking = ref(false)
   async function saveBooking(payload: IbookingPost) {
-    console.log(payload)
     try {
       await bookingService.postBooking(payload)
     } catch (e) {

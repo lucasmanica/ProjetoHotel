@@ -13,7 +13,7 @@ onMounted(async () => {
   await hotelsS.getHotels()
   intervalNotification()
 })
-let intervalNotificationState: number
+let intervalNotificationState: any
 function intervalNotification() {
   intervalNotificationState = setInterval(() => {
     bookingS.setNotificationBooking()

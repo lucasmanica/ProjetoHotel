@@ -4,7 +4,7 @@ import { bookingStore } from '../../stores/booking.js'
 import { imageHotel } from '../../utils/hotelUtil.js'
 import VerticalCard from '../cards/VerticalCard.vue'
 import SkeletonCardVertical from '../cards/skeletons/SkeletonCardVertical.vue'
-const bookingS = bookingStore()
+const bookingS: any = bookingStore()
 onMounted(async () => {
   await bookingS.getBookings()
 })
