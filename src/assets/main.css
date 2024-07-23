@@ -1,0 +1,7 @@
+@import './base.css';
+@import './utilities.css';
+
+.app__view {
+  display: flex;
+  justify-content: center;
+}

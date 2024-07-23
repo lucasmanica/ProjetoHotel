@@ -1,0 +1,48 @@
+.flex--row {
+  display: flex;
+  gap: 8px;
+}
+.flex--center--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overflow {
+  overflow: auto;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.p-0 {
+  padding: 0 !important;
+}
+.m-l-12 {
+  margin-left: 12px;
+}
+.m-l-24 {
+  margin-left: 24px;
+}
+.m-b-12 {
+  margin-bottom: 12px;
+}
+.m-h-16 {
+  margin: 0px 16px;
+}
+.p-8 {
+  padding: 8px;
+}
+.p-16 {
+  padding: 16px;
+}
+.p-h-16 {
+  padding: 0px 16px;
+}
+.p-h-24 {
+  padding: 0px 24px;
+}
+.text--italic {
+  font-size: 0.8rem;
+  font-style: italic;
+}
