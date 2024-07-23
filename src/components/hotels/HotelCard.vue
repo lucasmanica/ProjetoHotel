@@ -45,7 +45,7 @@ defineExpose({
     </article>
     <article class="hotel-card__prices">
       <p>Diária: R$ {{ hotel.price }}</p>
-      <p>
+      <p :title="`Pacote por ${hotelS.lastFormSearch.rooms} ${hotelS.lastFormSearch.rooms > 1 ? 'quartos' : 'quarto'}`">
         Pacote por {{ hotelS.lastFormSearch.diffDays }}
         {{ hotelS.lastFormSearch.diffDays > 1 ? 'dias' : 'dia' }} R$
         {{
