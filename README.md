@@ -1,61 +1,64 @@
-# HotelReserva
+# Hotel Reserva
 
-This template should help get you started developing with Vue 3 in Vite.
+## Descrição
 
-## Recommended IDE Setup
+Aplicação que busca e reserva hotéis desenvolvido com Vue 3.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Como rodar o Projeto
 
-## Type Support for `.vue` Imports in TS
+Após enntrar no diretório, instalar as dependências com ```npm install```, após a instalação das dependências, rodar o comando ```npm run dev```, após a execução doo último comando, abrir um novo terminal e rodar o comando ```npx json-server db.json --port 3001 delay --1000```, onde a flag delay é utilizada para simular throttling de rede.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Detalhes
 
-## Customize configuration
+A aplicação "Hotel Reserva" foi desenvolvida com finalidade de testar habilidades relacionadas ao front-end utilizando Vue 3, Composition Api, teste unitários, Typescript, Pinia e Vue Router.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+A aplicação é composta por um formulário que busca hotéis filtrados por:
 
-## Project Setup
+- Destino
+- Data de CheckIn
+- Data de CheckOut
+- Hóspedes
+- Quartos
 
-```sh
-npm install
-```
+Uma lista com cartões com detalhes sobre os hotéis, que podem ser ordenadas por:
 
-### Compile and Hot-Reload for Development
+- Preço
+- Avaliações
+- Quantidade de avaliações
 
-```sh
-npm run dev
-```
+Possui a funcionalidade para comparar hotéis, que faz com que os cartões fiquem um do lado do outro para comparação de preço e avaliação.
 
-### Type-Check, Compile and Minify for Production
+Possui um formulário para reserva dos hotéis com o preenchimento do formulário que contém os seguintes campos:
 
-```sh
-npm run build
-```
+- Nome
+- Telefone
+- Email
+- Tipo do pagamento
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Possui duas telas de navegação, onde uma contém as informações dos hotéis e suas funcionalidades e outra tela contendo detalhes sobre as reservas realizadas.
 
-```sh
-npm run test:unit
-```
+Sistema de notificação com um intervalo periódico para demonstrar novas notificações sobre as reservas.
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## Fluxo da Aplicação
 
-```sh
-npm run test:e2e:dev
-```
+Após entrar na aplicação, é carregado uma tela com um formulário e uma lista contendo todos os hotéis listados pelo mock.
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+No formulário de pesquisa de hotéis, o único campo que possui filtro efetivo (para filtrar hotéis) é o campo de Destino, os demais outros campos (CheckIn, CheckOut, Hóspedes e Quartos) possui apenas relevância para modificar os preços de pacote nos hotéis.
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+Na parte de ordenação, é possível apenas ordenar na ordem do maior para menor, por exemplo:
 
-```sh
-npm run build
-npm run test:e2e
-```
+- Ordenação por preço: filtra a lista de hotéis do maior para o menos
 
-### Lint with [ESLint](https://eslint.org/)
+Cada cartão da lista contendo as informações de um hotél em específico possui um campo de checkbox, onde é possível selecionar um ou mais cartões de hotéis. Após selecionar os checkboxes aparece um novo botão ao lado dos botões de ordenação, que possui a funcionalidade de abrir uma nova tela (modal) contendo uma lista de cartões selecionados posicionados de forma horizontal.
 
-```sh
-npm run lint
-```
+Na página inicial, cada cartão de hotél possui um botão para comprar uma reserva. Após clicar no botão, aparece um formulário (overlay) para finalizar a compra. Ao clicar para finalizar a compra, após alguns segundos, é redirecionado para uma outra página contendo as informações sobre as reservas compradas.
+
+Ná página/tela de Reservas é listado todas reservas.
+
+### Tecnologias utilizadas
+
+- Vue 3
+- Typescript
+- Pinia
+- Vitest
+- Vuetify
