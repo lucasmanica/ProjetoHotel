@@ -2,17 +2,28 @@ import { describe, it, expect, vi, test, beforeEach } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
 import { mount } from '@vue/test-utils'
 import HotelCard from '../../hotels/HotelCard.vue'
+import type { Ihotel } from '@/types/hotels/interface'
 
 let wrapper: any
 let vuetify: any
 describe('HotelCard', () => {
+  const hotel: Ihotel = {
+    id: 1,
+    name: 'string',
+    roomsAvailable: 1,
+    peopleAvailable: 1,
+    city: 'string',
+    state: 'string',
+    rating: 4,
+    rates: 222,
+    sales: 333,
+    price: 400,
+    imgUrl: 'image10'
+  };
   it('renders properly', async () => {
     wrapper = mount(HotelCard, {
       props: {
-        hotel: {
-          imgUrl: 'image10',
-          rating: 4
-        }
+        hotel
       },
       global: {
         plugins: [createTestingPinia({ createSpy: vi.fn() }), vuetify],

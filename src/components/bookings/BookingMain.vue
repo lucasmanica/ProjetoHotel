@@ -5,7 +5,7 @@ import { imageHotel } from '../../utils/hotelUtil.js'
 import VerticalCard from '../cards/VerticalCard.vue'
 import SkeletonCardVertical from '../cards/skeletons/SkeletonCardVertical.vue'
 type StoreBooking = ReturnType<typeof bookingStore>
-const bookingS: StoreBooking = bookingStore()
+const bookingS: any | StoreBooking = bookingStore()
 onMounted(async () => {
   await bookingS.getBookings()
   console.log(bookingS)
