@@ -1,3 +1,13 @@
+export type TypeSort = {
+  price: string
+  rating: string
+  rates: string
+  default: string
+}
+// price: 'preço',
+// rating: 'avaliação',
+// rates: 'quantidade de avaliações',
+// default: ''
 export interface Ihotel {
   id: number
   name: string

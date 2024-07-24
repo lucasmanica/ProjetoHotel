@@ -4,9 +4,11 @@ import { bookingStore } from '../../stores/booking.js'
 import { imageHotel } from '../../utils/hotelUtil.js'
 import VerticalCard from '../cards/VerticalCard.vue'
 import SkeletonCardVertical from '../cards/skeletons/SkeletonCardVertical.vue'
-const bookingS: any = bookingStore()
+type StoreBooking = ReturnType<typeof bookingStore>
+const bookingS: StoreBooking = bookingStore()
 onMounted(async () => {
   await bookingS.getBookings()
+  console.log(bookingS)
 })
 const isLoading = computed(() => {
   return bookingS.isLoading

@@ -1,54 +1,33 @@
 import { describe, it, expect, vi, test } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
 import { mount } from '@vue/test-utils'
-import { ref } from 'vue'
 import HotelMain from '../../hotels/HotelMain.vue'
-import HotelCard from '../../hotels/HotelCard.vue'
 
-
-
-let wrapper: any 
-let childComponent: any
-const hotelCardRef =  {
-  value: [
-  { id: 1, isSelected: true },
-  { id: 2, isSelected: true },
-]}
-// vi.mock('../../hotels/HotelCard.vue', () => ({
-//   name: 'HotelCard',
-//   template: '<div @click="emitSelected" />',
-//   setup() {
-//     const emit = (event) => {
-//       return {
-//         emitSelected: () => emit('selected', 1),
-//       };
-//     };
-//     return {
-//       emitSelected: emit(() => {}),
-//     };
-//   },
-// }));
-
+let wrapper: any
 describe('HotelMain', () => {
   it('renders properly', async () => {
     wrapper = mount(HotelMain, {
       global: {
-        plugins: [
-          createTestingPinia({ createSpy: vi.fn() })
-        ],
-      },
-      provide: {
-        hotelCardRef: () => hotelCardRef
+        plugins: [createTestingPinia({ createSpy: vi.fn() })],
+        stubs: {
+          'v-rating': { template: '<div></div>' },
+          'v-checkbox': { template: '<div></div>' },
+          'v-card': { template: '<div></div>' },
+          'v-overlay': { template: '<div></div>' },
+          'v-btn': { template: '<div></div>' },
+          'v-icon': { template: '<div></div>' },
+          'v-empty-state': { template: '<div></div>' }
+        }
       }
-    });
+    })
   })
-  test('activeModalPrice', () => {
+  test('HotelMain component test wrapper and activeModalPrice function change state.', () => {
     expect(wrapper).toBeTruthy()
     expect(wrapper.vm.modalComparison).toBe(false)
     wrapper.vm.activeModalPrice()
     expect(wrapper.vm.modalComparison).toBe(true)
   })
-  test('testFunctions', async () => {
+  test('Test functions', async () => {
     expect(wrapper.vm.selectedHotels).toStrictEqual([])
     /*Ao tentar testar essas funções, foi encontrado um problema em criar um mock
      para a referência do componente filho, talvez com mais tempo eu encontrasse uma 
