@@ -11,7 +11,7 @@ const hotelsS = hotelsStore()
 const isLoading = computed(() => {
   return hotelsS.isLoading
 })
-const hotelCardRef = ref(ref<InstanceType<typeof HotelCard>>())
+const hotelCardRef = ref()
 const selectedHotels = ref<number[]>([])
 const selectedSort = ref('')
 const sortHotels = (typeSort: string) => {

@@ -1,3 +1,13 @@
+export type TypeSort = {
+  price: string
+  rating: string
+  rates: string
+  default: string
+}
+// price: 'preço',
+// rating: 'avaliação',
+// rates: 'quantidade de avaliações',
+// default: ''
 export interface Ihotel {
   id: number
   name: string
@@ -39,22 +49,6 @@ export interface IlastFormSearch {
 }
 
 export interface IpaymentFormVuetify {
-  errors: Ref<{ id: string | number; errorMessages: string[] }[]>
-  isDisabled: ComputedRef<boolean>
-  isReadonly: ComputedRef<boolean>
-  isValidating: ShallowRef<boolean>
-  isValid: Ref<boolean | null> & { externalValue: boolean }
-  items: Ref<
-    {
-      id: string | number
-      validate: () => Promise<string[]>
-      reset: () => Promise<void>
-      resetValidation: () => Promise<void>
-      vm: Raw<ComponentInternalInstance>
-      isValid: boolean | null
-      errorMessages: string[]
-    }[]
-  >
   validate: () => Promise<{
     valid: boolean
     errors: { id: string | number; errorMessages: string[] }[]

@@ -47,7 +47,7 @@ export const hotelsStore = defineStore('hotels', () => {
       isLoading.value = false
     }
   }
-  async function getHotels(payload: IformSearch | undefined): Promise<void> {
+  async function getHotels(payload?: IformSearch | undefined): Promise<void> {
     setLastFormSearch(payload as IformSearch)
     isLoading.value = true
     try {
